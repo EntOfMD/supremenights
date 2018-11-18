@@ -4,17 +4,17 @@ export function Header() {
 	return (
 		<nav className="navbar navbar-dark navbar-expand-lg">
 			<div className="container">
-				<a className="navbar-brand" href="">
-					BookWithMe
+				<a className="navbar-brand" href="/">
+					SupremeNights
 				</a>
 				<form className="form-inline my-2 my-lg-0">
 					<input
 						className="form-control mr-sm-2 sn-search"
 						type="search"
-						placeholder="Try 'new york'"
+						placeholder="Try '10301' or 'DC'"
 						aria-label="Search"
 					/>
-					<button className="btn btn-outline-success my-2 my-sm-0 btn-sn-search" type="submit">
+					<button className="btn btn-outline-info my-2 my-sm-0 btn-sn-search" type="submit">
 						Search
 					</button>
 				</form>

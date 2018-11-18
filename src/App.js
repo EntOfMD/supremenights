@@ -8,6 +8,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header />
+				<p class="main">This is from App.js component</p>
 			</div>
 		);
 	}
