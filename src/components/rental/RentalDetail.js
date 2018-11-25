@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export class RentalDetail extends React.Component {
+import * as actions from '../../actions';
+
+class RentalDetail extends React.Component {
 	render() {
 		return (
 			<div>
@@ -9,3 +12,9 @@ export class RentalDetail extends React.Component {
 		);
 	}
 }
+
+function mapStateToProps(state) {
+	return {};
+}
+
+export default connect(mapStateToProps)(RentalDetail);
