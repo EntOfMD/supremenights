@@ -1,4 +1,4 @@
-import { FETCH_RENTALS } from './types';
+import { FETCH_RENTALS, FETCH_RENTALS_BY_ID } from './types';
 
 const rentals = [
 	{
@@ -44,14 +44,14 @@ const rentals = [
 		createdAt: `11/20/2018`,
 	},
 	{
-		id: `1`,
+		id: `4`,
 		title: `Suites for rent! short or long term!`,
 		city: `Negombo`,
 		street: `Mark St`,
 		category: `Suite`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
-		bedrooms: `1`,
-		bathrooms: `1`,
+		bedrooms: `4`,
+		bathrooms: `4`,
 		description: `Room in Fernando Hotel`,
 		dailyRate: `50`,
 		shared: 0,
@@ -63,5 +63,13 @@ export const fetchRentals = () => {
 	return {
 		type: FETCH_RENTALS,
 		rentals,
+	};
+};
+
+export const fetchRentalById = (rentalId) => {
+	const rental = rentals.find((rental) => rental.id === rentalId);
+	return {
+		type: FETCH_RENTALS_BY_ID,
+		rental,
 	};
 };
