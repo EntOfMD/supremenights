@@ -1,16 +1,16 @@
-import { FETCH_RENTALS, FETCH_RENTALS_BY_ID } from './types';
+import { FETCH_RENTALS, FETCH_RENTALS_BY_ID_SUCCESS } from './types';
 
 const rentals = [
 	{
 		id: `1`,
-		title: `Suites for rent! short or long term!`,
+		title: `New house for rent`,
 		city: `Negombo`,
 		street: `Mark St`,
 		category: `Suite`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
 		bedrooms: `1`,
 		bathrooms: `1`,
-		description: `Room in Fernando Hotel`,
+		description: `Newly renovated single family house in city suburbs`,
 		dailyRate: `50`,
 		shared: 1,
 		createdAt: `11/20/2018`,
@@ -67,9 +67,18 @@ export const fetchRentals = () => {
 };
 
 export const fetchRentalById = (rentalId) => {
-	const rental = rentals.find((rental) => rental.id === rentalId);
+	return function(dispatch) {
+		/* Waits ms to replicate server call */
+		setTimeout(() => {
+			const rental = rentals.find((rental) => rental.id === rentalId);
+			dispatch(fetchRentalByIdSuccess(rental));
+		}, 100);
+	};
+};
+
+const fetchRentalByIdSuccess = (rental) => {
 	return {
-		type: FETCH_RENTALS_BY_ID,
+		type: FETCH_RENTALS_BY_ID_SUCCESS,
 		rental,
 	};
 };

@@ -15,17 +15,17 @@ class RentalDetail extends React.Component {
 		if (rental) {
 			return (
 				<div>
-					<h3>Post title: {rental.title}</h3>
-					<h3>Post ID: {rental.id}</h3>
-					<h3>Post Description: {rental.description}</h3>
-					<h3>
+					<h5>Post title: {rental.title}</h5>
+					<h5>Post ID: {rental.id}</h5>
+					<h5>Post Description: {rental.description}</h5>
+					<h5>
 						Post Bed/Bath count:&nbsp;
 						{rental.bedrooms}
 						{rental.bedrooms > 1 ? ' Bedrooms' : ' Bedroom'}
 						&nbsp; and &nbsp;
 						{rental.bathrooms}
 						{rental.bathrooms > 1 ? ' Bathrooms' : ' Bathroom'}
-					</h3>
+					</h5>
 				</div>
 			);
 		} else return `cannot find that post`;
