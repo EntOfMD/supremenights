@@ -7,7 +7,7 @@ export const init = () => {
 		rentals: rentalReducer,
 		rental: selectedRentalReducer,
 	});
-
-	const store = redux.createStore(reducer, redux.applyMiddleware(thunk));
+	const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || redux.compose;
+	const store = redux.createStore(reducer, composeEnhancers(redux.applyMiddleware(thunk)));
 	return store;
 };
