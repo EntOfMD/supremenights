@@ -12,7 +12,7 @@ class RentalDetail extends React.Component {
 
 	render() {
 		const rental = this.props.rental;
-		if (rental) {
+		if (rental.id) {
 			return (
 				<div>
 					<h5>Post title: {rental.title}</h5>
@@ -28,7 +28,7 @@ class RentalDetail extends React.Component {
 					</h5>
 				</div>
 			);
-		} else return `cannot find that post`;
+		} else return `Loading...`;
 	}
 }
 
