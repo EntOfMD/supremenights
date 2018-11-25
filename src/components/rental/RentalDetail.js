@@ -4,7 +4,7 @@ export class RentalDetail extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>This page will display DETAILS of the rental ad</p>
+				<h1>this is ID: {this.props.match.params.id}</h1>
 			</div>
 		);
 	}
