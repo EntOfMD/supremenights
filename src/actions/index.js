@@ -1,4 +1,4 @@
-import { FETCH_RENTALS, FETCH_RENTALS_BY_ID_SUCCESS } from './types';
+import { FETCH_RENTALS, FETCH_RENTALS_BY_ID_SUCCESS, FETCH_RENTALS_BY_ID_INIT } from './types';
 
 const rentals = [
 	{
@@ -6,7 +6,7 @@ const rentals = [
 		title: `New house for rent`,
 		city: `Negombo`,
 		street: `Mark St`,
-		category: `Suite`,
+		category: `house`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
 		bedrooms: `1`,
 		bathrooms: `1`,
@@ -17,10 +17,10 @@ const rentals = [
 	},
 	{
 		id: `2`,
-		title: `Suites for rent! short or long term!`,
+		title: `Suites for rent! `,
 		city: `Negombo`,
 		street: `Mark St`,
-		category: `Suite`,
+		category: `suite`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
 		bedrooms: `2`,
 		bathrooms: `1`,
@@ -31,10 +31,10 @@ const rentals = [
 	},
 	{
 		id: `3`,
-		title: `Suites for rent! short or long term!`,
+		title: `Flat for rent`,
 		city: `Negombo`,
 		street: `Mark St`,
-		category: `Suite`,
+		category: `flat`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
 		bedrooms: `3`,
 		bathrooms: `1`,
@@ -45,19 +45,32 @@ const rentals = [
 	},
 	{
 		id: `4`,
-		title: `Suites for rent! short or long term!`,
+		title: `Unique hut!`,
 		city: `Negombo`,
 		street: `Mark St`,
-		category: `Suite`,
+		category: `hut`,
 		image: `https://placeimg.com/350/250/arch/grayscale`,
 		bedrooms: `4`,
 		bathrooms: `4`,
-		description: `Room in Fernando Hotel`,
+		description: `fanciest hut in the wuuuurrld!`,
 		dailyRate: `50`,
 		shared: 0,
 		createdAt: `11/20/2018`,
 	},
 ];
+
+const fetchRentalByIdInit = () => {
+	return {
+		type: FETCH_RENTALS_BY_ID_INIT,
+	};
+};
+
+const fetchRentalByIdSuccess = (rental) => {
+	return {
+		type: FETCH_RENTALS_BY_ID_SUCCESS,
+		rental,
+	};
+};
 
 export const fetchRentals = () => {
 	return {
@@ -68,17 +81,11 @@ export const fetchRentals = () => {
 
 export const fetchRentalById = (rentalId) => {
 	return function(dispatch) {
+		dispatch(fetchRentalByIdInit());
 		/* Waits ms to replicate server call */
 		setTimeout(() => {
 			const rental = rentals.find((rental) => rental.id === rentalId);
 			dispatch(fetchRentalByIdSuccess(rental));
 		}, 1000);
-	};
-};
-
-const fetchRentalByIdSuccess = (rental) => {
-	return {
-		type: FETCH_RENTALS_BY_ID_SUCCESS,
-		rental,
 	};
 };
