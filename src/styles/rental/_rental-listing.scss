@@ -4,10 +4,17 @@
 		font-weight: 700;
 		margin-bottom: 20px;
 	}
+	.rental-detail-link {
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 /* single card styles */
 .sn-card {
 	border: none;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
 
 	.card-block {
 		padding-top: 8px;
@@ -17,11 +24,11 @@
 			font-weight: 500;
 			font-size: 12px;
 			text-transform: uppercase;
-			color: #16861a;
 		}
 		.card-title {
 			font-size: 19px;
 			margin: 3px 0;
+			color: $title-color;
 		}
 		.card-text {
 			font-size: 14px;
