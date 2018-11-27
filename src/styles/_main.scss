@@ -1,0 +1,39 @@
+@import 'variables.scss';
+@import 'header/header';
+@import 'rental/rental-listing';
+
+.page-title {
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	font-family: $font-comfortaa;
+	text-align: center;
+}
+
+.body {
+	background-color: $main-white-color;
+}
+
+.flat {
+	color: $flat-color;
+}
+
+.house {
+	color: $house-color;
+}
+
+.condo {
+	color: $condo-color;
+}
+
+.suite {
+	color: $suite-color;
+}
+
+.hut {
+	color: $hut-color;
+}
+
+.unique {
+	color: $unique-color;
+}
