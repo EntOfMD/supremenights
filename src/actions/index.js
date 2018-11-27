@@ -86,6 +86,6 @@ export const fetchRentalById = (rentalId) => {
 		setTimeout(() => {
 			const rental = rentals.find((rental) => rental.id === rentalId);
 			dispatch(fetchRentalByIdSuccess(rental));
-		}, 1000);
+		}, 400);
 	};
 };
