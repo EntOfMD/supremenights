@@ -8,7 +8,7 @@ export function RentalCard(props) {
 		<div className={props.colNum}>
 			<Link className="rental-detail-link" to={`/rentals/${rental.id}`}>
 				<div className="card sn-card">
-					<img src={rental.image} alt="rental_first_image" className="card-img-top" />
+					<img src={rental.image} alt={rental.title} className="card-img-top" />
 					<div className="card-block">
 						<h6 className={`card-subtitle ${rental.category}`}>
 							{rental.shared ? `Shared` : `Entire`} {rental.category}
