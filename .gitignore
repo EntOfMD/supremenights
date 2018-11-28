@@ -9,6 +9,9 @@
 # production
 /build
 
+# dev
+/server/config/dev.js
+
 #css
 /src/**/*.css
 
