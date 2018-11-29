@@ -63,7 +63,7 @@ class seedDB {
 	}
 
 	async removeDB() {
-		await Rental.remove({});
+		await Rental.deleteMany({});
 	}
 	pushRentalstoDB() {
 		this.rentals.forEach((rental) => {
