@@ -1,4 +1,4 @@
-import { FETCH_RENTALS, FETCH_RENTALS_BY_ID_SUCCESS, FETCH_RENTALS_SUCCESS, FETCH_RENTALS_BY_ID_INIT } from './types';
+import { FETCH_RENTALS_BY_ID_SUCCESS, FETCH_RENTALS_SUCCESS, FETCH_RENTALS_BY_ID_INIT } from './types';
 import axios from 'axios';
 
 const fetchRentalByIdInit = () => {
@@ -23,8 +23,8 @@ const fetchRentalsSuccess = (rentals) => {
 
 export const fetchRentals = () => {
 	return (dispatch) => {
-		axios.get(`http://localhost:3001/api/v1/rentals`).then((rentals) => {
-			dispatch(fetchRentalByIdSuccess(rentals));
+		axios.get(`api/v1/rentals`).then((rentals) => {
+			dispatch(fetchRentalsSuccess(rentals.data));
 		});
 	};
 };
@@ -32,7 +32,7 @@ export const fetchRentals = () => {
 export const fetchRentalById = (rentalId) => {
 	return function(dispatch) {
 		dispatch(fetchRentalByIdInit());
-		axios.get(`http://localhost:3001/api/v1/rentals/${rentalId}`).then((rental) => {
+		axios.get(`/api/v1/rentals/${rentalId}`).then((rental) => {
 			dispatch(fetchRentalByIdSuccess(rental));
 		});
 	};
