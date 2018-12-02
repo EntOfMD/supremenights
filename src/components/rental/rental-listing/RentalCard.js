@@ -6,7 +6,7 @@ export function RentalCard(props) {
 
 	return (
 		<div className={props.colNum}>
-			<Link className="rental-detail-link" to={`/rentals/${rental.id}`}>
+			<Link className="rental-detail-link" to={`/rentals/${rental._id}`}>
 				<div className="card sn-card">
 					<img src={rental.image} alt={rental.title} className="card-img-top" />
 					<div className="card-block">
